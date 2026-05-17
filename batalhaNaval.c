@@ -1,10 +1,10 @@
-#include <stdio.h>
+
 
 // Desafio Batalha Naval - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
 
-int main() {
+
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
@@ -35,6 +35,68 @@ int main() {
     // 0 0 1 0 0
     // 1 1 1 1 1
     // 0 0 1 0 0
+#include<stdio.h>
+
+int main(){
+
+
+ int  linhas[10]={ 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 };
+ char colunas[10]= {  'A' ,  'B',  'C',  'D' ,  'E' ,  'F' ,  'G' , 'H' ,  'I' ,  'J'   };
+ int i,j;
+ //criando o tabuleiro matriz 10x10
+ int tabuleiro[10][10]= {
+    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
+    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
+    {0 ,0 ,0 ,3 ,3 ,3 ,0 ,0 ,0 ,0 },
+    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
+    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 },
+    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 },
+    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 },
+    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
+    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
+    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 } };
+
+
+    printf("***TABULEIRO BATALHA NAVAL***\n");
+ for ( i = 0; i < 10; i++)
+ {
+    printf("%3c",colunas[i]);
+    
+ }
+ printf("\n");
+
+
+ 
+   for ( i = 0; i < 10; i++)
+   {
+      for ( j = 0; j < 10; j++)
+      {   
+        printf("%3d",tabuleiro[i][j]);
+        
+      }
+      printf("\n");
+   }
+
+   
+
+
+ 
+
+
+ 
+    
+
+
+
+
+    
+
+
+
+
+
+
+
 
     return 0;
 }
