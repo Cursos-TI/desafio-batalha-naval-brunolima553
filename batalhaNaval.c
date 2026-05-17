@@ -77,7 +77,7 @@ int main(){
       printf("\n");
    }
 
-   
+   //dificuldade para enterder a logica
 
 
  
