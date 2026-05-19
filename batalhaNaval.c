@@ -1,83 +1,62 @@
-
-
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
-
-
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
-
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
-
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
-
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
-
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
-#include<stdio.h>
+#include<stdio.h>//jogo batalha naval
 
 int main(){
 
 
- int  linhas[10]={ 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 };
- char colunas[10]= {  'A' ,  'B',  'C',  'D' ,  'E' ,  'F' ,  'G' , 'H' ,  'I' ,  'J'   };
+ //declarando vetores e matriz
+ char colunas[10]= {'A','B','C','D','E','F','G','H','I','J'};
  int i,j;
  //criando o tabuleiro matriz 10x10
- int tabuleiro[10][10]= {
-    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
-    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
-    {0 ,0 ,0 ,3 ,3 ,3 ,0 ,0 ,0 ,0 },
-    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
-    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 },
-    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 },
-    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 },
-    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
-    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 },
-    {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 } };
+ int tabuleiro[10][10];
+  
+ //Estrutura de repetição para matriz do jogo 
+   for ( i = 0; i < 10; i++)
+   {   for ( j = 0; j < 10; j++)
+      {   
+        tabuleiro [i][j]=0;//declarando o tabuleiro =0
+      }
+   }
 
 
-    printf("***TABULEIRO BATALHA NAVAL***\n");
- for ( i = 0; i < 10; i++)
+   //Posicionar navio Horinzontal 
+   for ( i = 3; i < 6; i++)
+   {
+      tabuleiro[3][i] =3;
+   }
+
+   //Posicionar navio Vertical 
+   for ( j = 0; j < 3; j++)
+   {
+      tabuleiro[j][9] =3;
+   }
+   printf("\n");
+      
+   
+   //Exibir Tabuleiro
+ printf("***TABULEIRO BATALHA NAVAL***\n");
+ 
+ 
+ for ( j = 0; j < 10; j++)//imprime as letras de A á J
  {
-    printf("%3c",colunas[i]);
+    printf("%3c",colunas[j]);// n° '3' da um espaçamento entre as letras no console
     
  }
- printf("\n");
 
 
- 
-   for ( i = 0; i < 10; i++)
-   {
+ printf("\n");// organizar o codigo
+
+    for ( i = 0; i < 10; i++)
+   {  printf("%2d",1 + i); // imprime a coluna numerica coordenadas do tabuleiro 
+      
       for ( j = 0; j < 10; j++)
       {   
-        printf("%3d",tabuleiro[i][j]);
+        printf("%3d",tabuleiro[i][j] );
         
       }
       printf("\n");
-   }
+   } 
 
-   //dificuldade para enterder a logica
+   
 
 
  
