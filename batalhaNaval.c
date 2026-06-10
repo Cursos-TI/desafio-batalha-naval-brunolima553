@@ -2,7 +2,8 @@
 
 #define LINHAS 10
 #define COLUNAS 10
-
+#define LINHA_MENOR 3
+#define COLUNA_MENOR 5
 
 int main(){
 
@@ -12,6 +13,31 @@ int main(){
  int i,j;
  //criando o tabuleiro matriz 10x10
  int tabuleiro[LINHAS][COLUNAS];
+
+
+ int matriz_cruz[LINHA_MENOR][COLUNA_MENOR] = {
+  {0,0,5,0,0},
+  {5,5,5,5,5},
+  {0,0,5,0,0}
+ };
+
+ int matriz_cone[LINHA_MENOR][COLUNA_MENOR] ={
+  {0,0,5,0,0},
+  {0,5,5,5,0},
+  {5,5,5,5,5}
+ };
+
+ int matriz_octaedro[LINHA_MENOR][COLUNA_MENOR] ={
+  {0,0,5,0,0},
+  {0,5,5,5,0},
+  {0,0,5,0,0}
+ };
+     // Coordenadas de onde cada submatriz vai entrar (Linha, Coluna)
+  int inicio_lin1 = 0, inicio_col1 = 2;
+  int inicio_lin2 = 7, inicio_col2 = 0;
+  int inicio_lin3 = 7, inicio_col3 = 5;
+
+
   
  //Estrutura de repetição para matriz do jogo 
    for ( i = 0; i < LINHAS; i++)
@@ -44,19 +70,44 @@ int main(){
        for (j = 0; j < 3; j++)
        {
          tabuleiro [0 + j][9 - j] = 3; //posiciona o navio na diagonal secundaria
-         for (int k = 0; k < 3; k++)
-         {
-            tabuleiro[9 -k][9-k] =3; //POSICIONA o navio no final da secundaria diagonal
-         }
-         printf("\n");
+         
 
        }
        
        printf("\n");
     }
+       
+
+      //exibir matriz menor Cruz na maior
+      for ( i = 0; i < 3; i++)
+      {
+        for ( j = 0; j < 5; j++)
+        {
+           tabuleiro[inicio_lin1 + i][inicio_col1 + j] = matriz_cruz[i][j];
+        }
+        
+      }
+      
+
+           //exibir matriz menor Conena maior
+      for ( i = 0; i < 3; i++)
+      {
+        for ( j = 0; j < 5; j++)
+        {
+           tabuleiro[inicio_lin2 + i][inicio_col2 + j] = matriz_cone[i][j];
+        }
+        
+      }
     
-
-
+           //exibir matriz menor octaedro na maior
+      for ( i = 0; i < 3; i++)
+      {
+        for ( j = 0; j < 5; j++)
+        {
+           tabuleiro[inicio_lin3 + i][inicio_col3 + j] = matriz_octaedro[i][j];
+        }
+        
+      }
 
   
       
